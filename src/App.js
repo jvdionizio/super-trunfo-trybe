@@ -19,8 +19,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Tryunfo</h1>
-        <Form { ...defaultProps } />
+        <div className="makingCard">
+          <Form { ...defaultProps } />
+        </div>
       </div>
     );
   }
