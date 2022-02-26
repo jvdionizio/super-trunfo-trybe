@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './components/Card';
 import Form from './components/Form';
 
 const defaultProps = {
@@ -21,6 +22,7 @@ class App extends React.Component {
       <div>
         <div className="makingCard">
           <Form { ...defaultProps } />
+          <Card { ...defaultProps } />
         </div>
       </div>
     );

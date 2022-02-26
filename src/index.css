@@ -11,7 +11,6 @@
 .addNewCard{
   display: flex;
   flex-direction: column;
-  position: absolute;
   width: 50%;
   height: 930px;
   left: 0px;
@@ -39,7 +38,7 @@
   font-family: Verdana;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.3rem;
   line-height: 150%;
 }
 
@@ -126,4 +125,49 @@
   order: 0;
   flex-grow: 0;
   margin: 0px 0px;
+}
+
+.viewCard {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 930px;
+  left: 0px;
+  background: #023031;
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: bold;
+  color: white;
+}
+
+.viewCard h2{
+  margin-top: 48px;
+  margin-left: 114px;
+  margin-bottom: 132px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 348px;
+  height: 529px;
+  margin-left: 114px;
+  align-self: center;
+  background-color: #036B52;
+  border: 7px solid white;
+  border-radius: 10px;
+}
+
+.card h3 {
+  align-self: flex-end;
+  margin-right: 16px;
+}
+
+.atribute {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-left: 16px;
+  margin-right: 16px;
 }
