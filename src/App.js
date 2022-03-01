@@ -1,11 +1,14 @@
 import React from 'react';
-import Card from './components/Card';
+import CardPreview from './components/CardPreview';
+import Deck from './components/Deck';
 import Form from './components/Form';
+import deckArr from './data/deckArr';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSave = this.handleSave.bind(this);
     this.validate = this.validate.bind(this);
     this.state = {
       name: 'Nome da carta',
@@ -26,6 +29,23 @@ class App extends React.Component {
     this.setState({
       [name]: value,
     }, this.validate);
+  }
+
+  handleSave() {
+    const card = this.state;
+    deckArr.push(card);
+    console.log(deckArr);
+    this.setState({
+      name: '',
+      description: '',
+      attr1: '0',
+      attr2: '0',
+      attr3: '0',
+      image: '',
+      rare: 'normal',
+      trunfo: false,
+      btnDisable: true,
+    });
   }
 
   validate() {
@@ -83,8 +103,9 @@ class App extends React.Component {
             // hasTrunfo= false
             isSaveButtonDisabled={ btnDisable }
             onInputChange={ this.handleChange }
+            onSaveButtonClick={ this.handleSave }
           />
-          <Card
+          <CardPreview
             cardName={ name }
             cardDescription={ description }
             cardAttr1={ attr1 }
@@ -94,9 +115,9 @@ class App extends React.Component {
             cardRare={ rare }
             cardTrunfo={ trunfo }
             // hasTrunfo= false
-            isSaveButtonDisabled={ btnDisable }
           />
         </div>
+        <Deck />
       </div>
     );
   }

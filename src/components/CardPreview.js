@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Card extends React.Component {
+class CardPreview extends React.Component {
   render() {
     const {
       cardName,
@@ -12,10 +12,10 @@ class Card extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      excludeBtn,
     } = this.props;
     return (
-      <div>
+      <div className="viewCard">
+        <h2>Pré-visualização</h2>
         <div className="card">
           <h3 data-testid="name-card">{cardName}</h3>
           <img src={ cardImage } alt={ cardName } data-testid="image-card" />
@@ -45,20 +45,13 @@ class Card extends React.Component {
             >
               Super Trunfo
             </div>)}
-          <button
-            data-testid="delete-button"
-            onClick={ excludeBtn }
-            type="button"
-          >
-            Excluir
-          </button>
         </div>
       </div>
     );
   }
 }
 
-Card.propTypes = {
+CardPreview.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
   cardAttr1: PropTypes.string.isRequired,
@@ -69,4 +62,4 @@ Card.propTypes = {
   cardTrunfo: PropTypes.bool.isRequired,
 };
 
-export default Card;
+export default CardPreview;
