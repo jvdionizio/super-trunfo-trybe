@@ -45,14 +45,14 @@ class Card extends React.Component {
             >
               Super Trunfo
             </div>)}
-          <button
-            data-testid="delete-button"
-            onClick={ excludeBtn }
-            type="button"
-          >
-            Excluir
-          </button>
         </div>
+        <button
+          data-testid="delete-button"
+          onClick={ excludeBtn }
+          type="button"
+        >
+          Excluir
+        </button>
       </div>
     );
   }
@@ -67,6 +67,7 @@ Card.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
+  excludeBtn: PropTypes.func.isRequired,
 };
 
 export default Card;

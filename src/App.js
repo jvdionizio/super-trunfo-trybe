@@ -19,6 +19,7 @@ class App extends React.Component {
       image: 'url-to-image',
       rare: 'raro',
       trunfo: false,
+      hasTrunfo: false,
       btnDisable: true,
     };
   }
@@ -33,6 +34,11 @@ class App extends React.Component {
 
   handleSave() {
     const card = this.state;
+    if (card.trunfo) {
+      this.setState({
+        hasTrunfo: true,
+      });
+    }
     deckArr.push(card);
     console.log(deckArr);
     this.setState({
@@ -87,6 +93,7 @@ class App extends React.Component {
       image,
       rare,
       trunfo,
+      hasTrunfo,
       btnDisable } = this.state;
     return (
       <div>
@@ -100,7 +107,7 @@ class App extends React.Component {
             cardImage={ image }
             cardRare={ rare }
             cardTrunfo={ trunfo }
-            // hasTrunfo= false
+            hasTrunfo={ hasTrunfo }
             isSaveButtonDisabled={ btnDisable }
             onInputChange={ this.handleChange }
             onSaveButtonClick={ this.handleSave }
